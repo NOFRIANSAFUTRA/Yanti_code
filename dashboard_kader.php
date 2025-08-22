@@ -4581,6 +4581,181 @@ if (isset($_GET['delete'])) {
                     </div>
                 </div>
 
+                <div id="lansia-suaqbakung-tab" class="lansia-tab hidden">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="font-size: 14px;">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIK</th>
+                                    <th>Nama Lansia</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Tgl Lahir</th>
+                                    <th>Umur</th>
+                                    <th>Alamat</th>
+                                    <th>No. HP/Kontak</th>
+                                    <th>Nama Keluarga</th>
+                                    <th>No. HP Keluarga</th>
+                                    <th>Riwayat Penyakit</th>
+                                    <th>Obat Rutin</th>
+                                    <th>Status Kesehatan</th>
+                                    <th>Keterangan</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                $query = mysqli_query($conn, "SELECT * FROM lansia_rahmad WHERE alamat = 'Suaq Bakung' ORDER BY id DESC");
+                                while ($row = mysqli_fetch_assoc($query)):
+                                ?>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= htmlspecialchars($row['nik']); ?></td>
+                                        <td><?= htmlspecialchars($row['nama']); ?></td>
+                                        <td><?= htmlspecialchars($row['jk']); ?></td>
+                                        <td><?= htmlspecialchars($row['tgl_lahir']); ?></td>
+                                        <td><?= (int)$row['umur']; ?></td>
+                                        <td><?= htmlspecialchars($row['alamat']); ?></td>
+                                        <td><?= htmlspecialchars($row['no_telepon']); ?></td>
+                                        <td><?= htmlspecialchars($row['nama_keluarga']); ?></td>
+                                        <td><?= htmlspecialchars($row['no_telepon_keluarga']); ?></td>
+                                        <td><?= htmlspecialchars($row['riwayat_penyakit']); ?></td>
+                                        <td><?= htmlspecialchars($row['obat_rutin']); ?></td>
+                                        <td><?= htmlspecialchars($row['status_kesehatan']); ?></td>
+                                        <td><?= htmlspecialchars($row['ket']); ?></td>
+                                        <td class="actions">
+                                            <a href="lansia_edit/lansia_edit7.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                            <a href="lansia_hapus/lansia_delete7.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirmDelete()">
+                                                <i class="fas fa-trash"></i> Hapus
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                   <div id="lansia-rantaubinuang-tab" class="lansia-tab hidden">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="font-size: 14px;">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIK</th>
+                                    <th>Nama Lansia</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Tgl Lahir</th>
+                                    <th>Umur</th>
+                                    <th>Alamat</th>
+                                    <th>No. HP/Kontak</th>
+                                    <th>Nama Keluarga</th>
+                                    <th>No. HP Keluarga</th>
+                                    <th>Riwayat Penyakit</th>
+                                    <th>Obat Rutin</th>
+                                    <th>Status Kesehatan</th>
+                                    <th>Keterangan</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                $query = mysqli_query($conn, "SELECT * FROM lansia_maulana WHERE alamat = 'Rantau Binuang' ORDER BY id DESC");
+                                while ($row = mysqli_fetch_assoc($query)):
+                                ?>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= htmlspecialchars($row['nik']); ?></td>
+                                        <td><?= htmlspecialchars($row['nama']); ?></td>
+                                        <td><?= htmlspecialchars($row['jk']); ?></td>
+                                        <td><?= htmlspecialchars($row['tgl_lahir']); ?></td>
+                                        <td><?= (int)$row['umur']; ?></td>
+                                        <td><?= htmlspecialchars($row['alamat']); ?></td>
+                                        <td><?= htmlspecialchars($row['no_telepon']); ?></td>
+                                        <td><?= htmlspecialchars($row['nama_keluarga']); ?></td>
+                                        <td><?= htmlspecialchars($row['no_telepon_keluarga']); ?></td>
+                                        <td><?= htmlspecialchars($row['riwayat_penyakit']); ?></td>
+                                        <td><?= htmlspecialchars($row['obat_rutin']); ?></td>
+                                        <td><?= htmlspecialchars($row['status_kesehatan']); ?></td>
+                                        <td><?= htmlspecialchars($row['ket']); ?></td>
+                                        <td class="actions">
+                                            <a href="lansia_edit/lansia_edit8.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                            <a href="lansia_hapus/lansia_delete8.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirmDelete()">
+                                                <i class="fas fa-trash"></i> Hapus
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                   <div id="lansia-pulauie-tab" class="lansia-tab hidden">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="font-size: 14px;">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIK</th>
+                                    <th>Nama Lansia</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Tgl Lahir</th>
+                                    <th>Umur</th>
+                                    <th>Alamat</th>
+                                    <th>No. HP/Kontak</th>
+                                    <th>Nama Keluarga</th>
+                                    <th>No. HP Keluarga</th>
+                                    <th>Riwayat Penyakit</th>
+                                    <th>Obat Rutin</th>
+                                    <th>Status Kesehatan</th>
+                                    <th>Keterangan</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                $query = mysqli_query($conn, "SELECT * FROM lansia_ari WHERE alamat = 'pulau ie' ORDER BY id DESC");
+                                while ($row = mysqli_fetch_assoc($query)):
+                                ?>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= htmlspecialchars($row['nik']); ?></td>
+                                        <td><?= htmlspecialchars($row['nama']); ?></td>
+                                        <td><?= htmlspecialchars($row['jk']); ?></td>
+                                        <td><?= htmlspecialchars($row['tgl_lahir']); ?></td>
+                                        <td><?= (int)$row['umur']; ?></td>
+                                        <td><?= htmlspecialchars($row['alamat']); ?></td>
+                                        <td><?= htmlspecialchars($row['no_telepon']); ?></td>
+                                        <td><?= htmlspecialchars($row['nama_keluarga']); ?></td>
+                                        <td><?= htmlspecialchars($row['no_telepon_keluarga']); ?></td>
+                                        <td><?= htmlspecialchars($row['riwayat_penyakit']); ?></td>
+                                        <td><?= htmlspecialchars($row['obat_rutin']); ?></td>
+                                        <td><?= htmlspecialchars($row['status_kesehatan']); ?></td>
+                                        <td><?= htmlspecialchars($row['ket']); ?></td>
+                                        <td class="actions">
+                                            <a href="lansia_edit/lansia_edit9.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                            <a href="lansia_hapus/lansia_delete9.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirmDelete()">
+                                                <i class="fas fa-trash"></i> Hapus
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
 
 
 
